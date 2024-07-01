@@ -3,14 +3,17 @@
     - [x] Install tree sitter
     - [ ] Setup keymaps
 - [ ] Formatting
-- [ ] Keymaps
 - [ ] Errors in popups
 - [ ] LSP Config
 - [ ] Better command panel
 - [ ] Debugger support
 - [ ] Theme picker with preview
+- [ ] Matching braces
+- [ ] Smart indentation
+- [ ] Emojis
 
-
+## Key Mappings
+These are saved in the `lua/config/mappings.lua` file
 
 ## Plugins
 
