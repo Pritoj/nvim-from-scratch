@@ -1,7 +1,7 @@
 ## Tasks
-- [ ] File finder
+- [x] File finder
     - [x] Install tree sitter
-    - [ ] Setup keymaps
+    - [x] Setup keymaps
 - [ ] Formatting
 - [ ] Errors in popups
 - [x] LSP Config
