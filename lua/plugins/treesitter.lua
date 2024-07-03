@@ -1,10 +1,10 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    config = function () 
+    config = function ()
       local configs = require("nvim-treesitter.configs")
       configs.setup({
-          ensure_installed = { 
+          ensure_installed = {
 		-- Shell stuff
                 "bash",
 
@@ -39,14 +39,14 @@ return {
                 "smithy",
 	},
           sync_install = false,
-          highlight = { 
+          highlight = {
 		enable = true,
 				disable = {
                         "python",
                 },
 
 	},
-          indent = { enable = true },  
+          indent = { enable = true }
         })
     end
  }
