@@ -16,6 +16,7 @@
 - [ ] Code Actions etc. with none-ls
 - [ ] Code completion
 - [ ] Maon install other tools
+- [ ] Rename variable/refactoring support
 
 ## Key Mappings
 These are saved in the `lua/config/mappings.lua` file

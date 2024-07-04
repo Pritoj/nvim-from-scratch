@@ -1,46 +1,43 @@
-local lspconfig = require("lspconfig")
+-- Thanks to https://github.com/JavierLuna/dots/blob/main/nvim/.config/nvim/lua/plugins/lsp.lua
+local on_attach = function(_, bufnr)
+  -- NOTE: Remember that lua is a real programming language, and as such it is possible
+  -- to define small helper and utility functions so you don't have to repeat yourself
+  -- many times.
+  --
+  -- In this case, we create a function that lets us more easily define mappings specific
+  -- for LSP related items. It sets the mode, buffer and description for us each time.
+  local nmap = function(keys, func, desc)
+    if desc then
+      desc = 'LSP: ' .. desc
+    end
 
--- Setup the Mason lsp config and pass in the lsps
--- that should definitely be installed
-require("mason-lspconfig").setup({
-  ensure_installed = {
-    -- lua stuff
-    "lua_ls",
+    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+  end
 
-    -- Utilities
-    "jqls",
-    "jsonls",
-    "yamlls",
-    "cssls",
-    "smithy_ls",
-    "html",
-    "tsserver",
-    "bashls"
-  },
-})
+  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>fm', vim.lsp.buf.format, '[F]or[M]at')
 
-local ls_to_setup = {
-  "jqls",
-  "tsserver",
-  "bashls",
-  "jsonls",
-  "yamlls",
-  "cssls",
-  "smithy_ls",
-  "html",
-}
+  nmap('<leader>gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+  nmap('<leader>gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+  nmap('<leader>gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+  nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
 
--- Setups up the above servers without opts
-for _, lsp in ipairs(ls_to_setup) do
-  lspconfig[lsp].setup({
-  })
+  -- See `:help K` for why this keymap
+  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+
+  -- Lesser used LSP functionality
+  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- To be added when I add code completion
+-- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-lspconfig.lua_ls.setup({
-  on_init = function(_)
-  end,
-  settings = {
+
+local ls_to_setup = {
+  lua_ls = {
     Lua = {
       diagnostics = {
         globals = { "vim" },
@@ -55,8 +52,36 @@ lspconfig.lua_ls.setup({
         preloadFileSize = 10000,
       },
     }
-  }
+  },
+  jqls = {},
+  tsserver = {},
+  bashls = {},
+  jsonls = {},
+  yamlls = {},
+  cssls = {},
+  smithy_ls = {},
+  html = {},
+}
+
+local mason_lspconfig = require 'mason-lspconfig'
+
+-- Setup the Mason lsp config and pass in the lsps
+-- that should definitely be installed
+mason_lspconfig.setup({
+  ensure_installed = vim.tbl_keys(ls_to_setup),
 })
+
+mason_lspconfig.setup_handlers {
+  function(server_name)
+    require('lspconfig')[server_name].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = ls_to_setup[server_name],
+      filetypes = (ls_to_setup[server_name] or {}).filetypes,
+    }
+  end,
+}
+
 
 -- Borders for floats
 local border = {

@@ -14,3 +14,4 @@ keymap.set("n", "<leader>e", "<cmd> Explore <cr>")
 keymap.set("n", "<leader>ff", "<cmd> Telescope fd<cr>")
 -- Live grep with telescope
 keymap.set("n", "<leader>fw", "<cmd> Telescope live_grep<cr>")
+
