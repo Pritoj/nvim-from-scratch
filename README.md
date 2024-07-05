@@ -15,8 +15,9 @@
 - [ ] Neotree or Nvim-tree or Oil
 - [ ] Code Actions etc. with none-ls
 - [ ] Code completion
-- [ ] Maon install other tools
+- [ ] Mason install other tools
 - [ ] Rename variable/refactoring support
+- [ ] Lualine
 
 ## Key Mappings
 These are saved in the `lua/config/mappings.lua` file
