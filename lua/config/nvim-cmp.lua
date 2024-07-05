@@ -1,5 +1,5 @@
 local cmp = require('cmp');
-
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -39,4 +39,7 @@ cmp.setup({
   }
 })
 
-
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
