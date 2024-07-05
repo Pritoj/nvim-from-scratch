@@ -10,7 +10,7 @@
 - [ ] Theme picker with preview
 - [ ] Matching braces
 - [ ] Smart indentation
-- [ ] Emojis
+- ✅ Emojis
 - [ ] Gitsigns or Fugitive
 - [ ] Neotree or Nvim-tree or Oil
 - [ ] Code Actions etc. with none-ls
