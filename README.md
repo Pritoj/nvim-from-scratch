@@ -2,12 +2,12 @@
 - [x] File finder
     - [x] Install tree sitter
     - [x] Setup keymaps
-- [ ] Formatting
-- [ ] Errors in popups
+- [x] Formatting
+- [x] Errors in popups
 - [x] LSP Config
 - [ ] Better command panel
 - [ ] Debugger support
-- [ ] Theme picker with preview
+- [x] Theme picker with preview
 - [ ] Matching braces
 - [ ] Smart indentation
 - ✅ Emojis
