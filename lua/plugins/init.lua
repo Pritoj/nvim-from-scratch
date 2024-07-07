@@ -53,6 +53,7 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-emoji',
+      'onsails/lspkind-nvim'
     },
     config = function()
       require "config.nvim-cmp"

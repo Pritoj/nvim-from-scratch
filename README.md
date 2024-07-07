@@ -8,16 +8,17 @@
 - [ ] Better command panel
 - [ ] Debugger support
 - [x] Theme picker with preview
-- [ ] Matching braces
-- [ ] Smart indentation
+- [x] Matching braces
+- [x] Smart indentation
 - ✅ Emojis
 - [ ] Gitsigns or Fugitive
 - [ ] Neotree or Nvim-tree or Oil
 - [ ] Code Actions etc. with none-ls
-- [ ] Code completion
+- [x] Code completion
 - [ ] Mason install other tools
 - [ ] Rename variable/refactoring support
 - [ ] Lualine
+- [ ] Folding with ufo
 
 ## Key Mappings
 These are saved in the `lua/config/mappings.lua` file
@@ -37,3 +38,4 @@ https://github.com/nvim-telescope/telescope.nvim/
 
 ### Treesitter
 https://github.com/nvim-treesitter/nvim-treesitter
+

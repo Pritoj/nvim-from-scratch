@@ -1,5 +1,34 @@
 local cmp = require('cmp');
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+
+local cmp_kinds = {
+  Text = '  ',
+  Method = '  ',
+  Function = '  ',
+  Constructor = '  ',
+  Field = '  ',
+  Variable = '  ',
+  Class = '  ',
+  Interface = '  ',
+  Module = '  ',
+  Property = '  ',
+  Unit = '  ',
+  Value = '  ',
+  Enum = '  ',
+  Keyword = '  ',
+  Snippet = '  ',
+  Color = '  ',
+  File = '  ',
+  Reference = '  ',
+  Folder = '  ',
+  EnumMember = '  ',
+  Constant = '  ',
+  Struct = '  ',
+  Event = '  ',
+  Operator = '  ',
+  TypeParameter = '  ',
+}
+
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -36,7 +65,26 @@ cmp.setup({
     documentation = cmp.config.window.bordered()
   },
   completion = {
-  }
+  },
+
+  formatting = {
+    fields = { "kind", "abbr" },
+    format = function(entry, vim_item)
+      if vim.tbl_contains({ 'path' }, entry.source.name) then
+        local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
+        if icon then
+          vim_item.kind = icon
+          vim_item.kind_hl_group = hl_group
+          return vim_item
+        end
+      end
+      return require('lspkind').cmp_format({ with_text = false })(entry, vim_item)
+    end
+    -- format = function(_, vim_item)
+    --   vim_item.kind = cmp_kinds[vim_item.kind] or ""
+    --   return vim_item
+    -- end,
+  },
 })
 
 cmp.event:on(
