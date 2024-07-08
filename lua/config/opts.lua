@@ -9,4 +9,3 @@ o.softtabstop = 2
 
 o.relativenumber = true
 o.number = true
-o.signcolumn = "number"
