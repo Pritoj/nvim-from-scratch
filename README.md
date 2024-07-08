@@ -11,13 +11,13 @@
 - [x] Matching braces
 - [x] Smart indentation
 - ✅ Emojis
-- [ ] Gitsigns or Fugitive
+- 👷 Gitsigns or Fugitive
 - [ ] Neotree or Nvim-tree or Oil
 - [ ] Code Actions etc. with none-ls
 - [x] Code completion
 - [ ] Mason install other tools
 - [ ] Rename variable/refactoring support
-- [ ] Lualine
+- [x] Lualine
 - [ ] Folding with ufo
 
 ## Key Mappings
