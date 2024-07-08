@@ -41,6 +41,13 @@ return {
 
   },
   {
+    'lewis6991/gitsigns.nvim',
+    event = "BufReadPre",
+    config = function()
+      require("config.gitsigns")
+    end
+  },
+  {
     'echasnovski/mini.nvim',
     version = '*',
     config = function()
