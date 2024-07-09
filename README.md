@@ -18,7 +18,7 @@
 - [ ] Mason install other tools
 - [ ] Rename variable/refactoring support
 - [x] Lualine
-- [ ] Folding with ufo
+- [x] Folding with ufo
 
 ## Key Mappings
 These are saved in the `lua/config/mappings.lua` file
