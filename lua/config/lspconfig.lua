@@ -86,6 +86,14 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+local mason_tool_installer = require "mason-tool-installer";
+
+mason_tool_installer.setup({
+  ensure_installed = {
+    'prettierd',
+    'eslint_d'
+  }
+})
 
 -- Borders for floats
 local border = {
@@ -139,4 +147,3 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
   command = "lua OpenDiagnosticIfNoFloat()",
   group = "lsp_diagnostics_hold",
 })
-

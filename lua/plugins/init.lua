@@ -93,5 +93,22 @@ return {
     config = function()
       require "config.ufo"
     end
+  },
+  {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    dependencies = {
+      'williamboman/mason.nvim'
+    }
+
+  },
+  {
+    'nvimtools/none-ls.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      "nvimtools/none-ls-extras.nvim",
+    },
+    config = function()
+      require "config.null-ls"
+    end
   }
 }
