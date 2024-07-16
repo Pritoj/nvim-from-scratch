@@ -110,5 +110,10 @@ return {
     config = function()
       require "config.null-ls"
     end
-  }
+  },
+  {
+    'ckolkey/ts-node-action',
+    dependencies = { 'nvim-treesitter' },
+    opts = {},
+  },
 }

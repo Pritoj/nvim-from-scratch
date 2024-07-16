@@ -8,5 +8,6 @@ null_ls.setup {
     require("none-ls.formatting.jq"),
     require("none-ls.code_actions.eslint_d"),
     null_ls.builtins.code_actions.gitsigns,
+    null_ls.builtins.code_actions.ts_node_action,
   }
 }
