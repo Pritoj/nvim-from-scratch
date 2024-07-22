@@ -2,17 +2,18 @@ M = { "lukas-reineke/indent-blankline.nvim", main = "ibl" }
 
 M.opts = {}
 local highlight_colors = {
-  ["pastel_purple"] = "#7D5BA6",
-  ["warm_brown"] = "#B38867",
-  ["soft_yellow"] = "#D9B44A",
-  ["lavender"] = "#8D86C9",
-  ["earthy_brown"] = "#A27B5C",
-  ["pale_yellow"] = "#FFDD83",
-  ["muted_purple"] = "#9E7AB3",
-  ["tan"] = "#C19A6B",
-  ["mustard_yellow"] = "#FFCF56",
-  ["pastel_violet"] = "#B19CD9"
+  ["pastel_purple"] = "#9E7AC9",
+  ["warm_brown"] = "#C19A6B",
+  ["soft_yellow"] = "#EACD76",
+  ["lavender"] = "#B19CD9",
+  ["earthy_brown"] = "#B38867",
+  ["pale_yellow"] = "#F2E9D8",
+  ["muted_purple"] = "#B19CD9",
+  ["tan"] = "#D2B48C",
+  ["mustard_yellow"] = "#FFDD83",
+  ["pastel_violet"] = "#C8A2C8"
 }
+
 
 local highlight = vim.tbl_keys(highlight_colors)
 
