@@ -7,7 +7,7 @@ keymap.set({ "n", "x" }, ";", ":")
 
 -- Filesystem
 -- Explore
-keymap.set("n", "<leader>e", "<cmd> Neotree toggle <cr>")
+keymap.set("n", "<leader>e", "<cmd> Neotree focus <cr>")
 
 -- Find file with telescope
 keymap.set("n", "<leader>ff", "<cmd> Telescope fd<cr>")
