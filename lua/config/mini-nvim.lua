@@ -4,7 +4,7 @@ require('mini.comment').setup({
   }
 })
 
-require('mini.statusline').setup()
+-- require('mini.statusline').setup()
 
 
 local hipatterns = require('mini.hipatterns')
