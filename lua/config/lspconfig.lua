@@ -37,7 +37,7 @@ capabilities.textDocument.foldingRange = {
   lineFoldingOnly = true,
 }
 -- To be added when I add code completion
--- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
 local ls_to_setup = {
