@@ -2,9 +2,6 @@ local M = -- lazy.nvim
 {
   "folke/noice.nvim",
   event = "VeryLazy",
-  opts = {
-    -- add any options here
-  },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     "MunifTanjim/nui.nvim",
@@ -17,6 +14,7 @@ local M = -- lazy.nvim
 
 M.config = function()
   local noice = require("noice")
+  require('config.notify')
 
   noice.setup({
     lsp = {
