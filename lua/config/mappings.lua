@@ -14,6 +14,8 @@ nmap("<leader>e", "<cmd> Neotree focus <cr>", "Show file tree")
 
 -- Find file with telescope
 nmap("<leader>ff", "<cmd> Telescope fd<cr>", "[F]ind [F]iles")
+-- Find buffer
+nmap("<leader>fb", "<cmd> Telescope buffers<cr>", "[F]ind [B]uffer")
 -- Live grep with telescope
 nmap("<leader>fw", "<cmd> Telescope live_grep<cr>", "[F]ind [W]ord")
 -- Pick colore scheme
