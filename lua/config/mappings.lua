@@ -3,7 +3,7 @@ local api = vim.api
 local uv = vim.uv
 
 local nmap = function(keys, func, desc)
-	keymap.set('n', keys, func, { desc = desc })
+  keymap.set('n', keys, func, { desc = desc })
 end
 
 -- Save key strokes (now we do not need to press shift to enter command mode).
