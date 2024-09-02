@@ -19,7 +19,8 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false
     }),
     ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
     ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
@@ -45,6 +46,7 @@ cmp.setup({
       return lspkind.cmp_format()(entry, vim_item)
     end
   },
+  preselect = cmp.PreselectMode.None
 })
 
 cmp.event:on(
