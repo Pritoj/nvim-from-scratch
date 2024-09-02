@@ -9,6 +9,7 @@ local M = {
   }
 }
 
+
 M.config = function()
   local nt = require("neo-tree");
   vim.fn.sign_define("DiagnosticSignError",
@@ -41,6 +42,14 @@ M.config = function()
         conflict  = "",
       }
     },
+    filesystem = {
+      follow_current_file = {
+        -- This will find and focus the file in the active buffer every time
+        -- the current file is changed while the tree is open.
+        enabled = true,
+        leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+      },
+    }
   })
 end
 
