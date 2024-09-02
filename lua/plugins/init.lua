@@ -115,30 +115,10 @@ return {
     opts = {},
   },
   {
-    "luckasRanarison/clear-action.nvim",
+    'Chaitanyabsprip/fastaction.nvim',
+    ---@type FastActionConfig
     opts = {
-      popup = { -- replaces the default prompt when selecting code actions
-        enable = true,
-        center = false,
-        border = "rounded",
-        hide_cursor = true,
-        hide_client = false, -- hide displaying name of LSP client
-        highlights = {
-          header = "CodeActionHeader",
-          label = "CodeActionLabel",
-          title = "CodeActionTitle",
-        },
-      },
-      mappings = {
-        code_action = "<leader>ca",
-      },
-      icons = {
-        quickfix = "⚙️",
-        refactor = "♻️",
-        source = "🔗",
-        combined = "💡", -- used when combine is set to true or as a fallback when there is no action kind
-      },
+      dismiss_keys = { "j", "k", "<c-c>", "q", "<Esc>" }
     },
-
-  }
+  },
 }

@@ -15,7 +15,6 @@ local on_attach = function(_, bufnr)
   end
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   nmap('<leader>fm', vim.lsp.buf.format, '[F]or[M]at')
 
   nmap('<leader>gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
@@ -29,6 +28,18 @@ local on_attach = function(_, bufnr)
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+  nmap(
+    '<leader>ca',
+    '<cmd>lua require("fastaction").code_action()<CR>',
+    "[C]ode [A]ctions"
+  )
+  vim.keymap.set(
+    'v',
+    '<leader>ca',
+    "<esc><cmd>lua require('fastaction').range_code_action()<CR>",
+    { buffer = bufnr, desc = "[C]ode [A]ctions" }
+  )
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -139,6 +150,7 @@ function OpenDiagnosticIfNoFloat()
   })
 end
 
+vim.keymap.set('n', '<leader>od', vim.diagnostic.open_float, { desc = "[O]pen [Diagnostics]" })
 -- Show diagnostics under the cursor when holding position
 vim.o.updatetime = 100
 vim.api.nvim_create_augroup("lsp_diagnostics_hold", { clear = true })
