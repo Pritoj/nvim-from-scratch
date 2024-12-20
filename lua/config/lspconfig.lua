@@ -1,3 +1,4 @@
+local lspconfig = require("lspconfig")
 -- Thanks to https://github.com/JavierLuna/dots/blob/main/nvim/.config/nvim/lua/plugins/lsp.lua
 local on_attach = function(_, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
@@ -40,6 +41,7 @@ local on_attach = function(_, bufnr)
     "<esc><cmd>lua require('fastaction').range_code_action()<CR>",
     { buffer = bufnr, desc = "[C]ode [A]ctions" }
   )
+  nmap('<leader>od', vim.diagnostic.open_float, "[O]pen [Diagnostics]")
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -78,6 +80,8 @@ local ls_to_setup = {
   html = {},
 }
 
+
+
 local mason_lspconfig = require 'mason-lspconfig'
 
 -- Setup the Mason lsp config and pass in the lsps
@@ -88,7 +92,7 @@ mason_lspconfig.setup({
 
 mason_lspconfig.setup_handlers {
   function(server_name)
-    require('lspconfig')[server_name].setup {
+    lspconfig[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = ls_to_setup[server_name],
