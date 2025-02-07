@@ -25,13 +25,14 @@ cmp.setup({
     ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
     ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
   }),
+
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'buffer' },
-    { name = 'path' },
-    { name = 'emoji' },
-    { name = 'gitmoji' },
+    { name = 'nvim_lsp',                priority = 10 },
+    { name = 'nvim_lsp_signature_help', priority = 10 },
+    { name = 'buffer',                  max_item_count = 5 },
+    { name = 'path',                    max_item_count = 5 },
+    { name = 'emoji',                   max_item_count = 5 },
+    { name = 'gitmoji',                 max_item_count = 10 },
   }),
   window = {
     completion = cmp.config.window.bordered(),
