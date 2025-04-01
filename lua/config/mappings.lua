@@ -1,6 +1,4 @@
 local keymap = vim.keymap
-local api = vim.api
-local uv = vim.uv
 
 local nmap = function(keys, func, desc)
   keymap.set('n', keys, func, { desc = desc })

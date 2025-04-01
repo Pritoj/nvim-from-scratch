@@ -11,3 +11,5 @@ o.softtabstop = 2
 o.relativenumber = true
 o.number = true
 wo.signcolumn = 'yes' -- Keep signcolumn on by default
+
+o.clipboard = "unnamedplus"
