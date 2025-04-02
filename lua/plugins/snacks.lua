@@ -15,6 +15,7 @@ local M = {
       enabled = true,
       configure = true
     },
+    dashboard = { enabled = true }
 
   },
 
