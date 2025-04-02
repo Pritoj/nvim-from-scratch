@@ -11,6 +11,10 @@ local M = {
     words = { enabled = true },
     notifier = { enabled = true },
     dim = { enabled = true },
+    lazygit = {
+      enabled = true,
+      configure = true
+    },
 
   },
 
@@ -29,6 +33,11 @@ local M = {
     -- References
     { "<leader>nr",      function() Snacks.words.jump(vim.v.count1) end,  desc = "[N]ext [R]eference",      mode = { "n", "t" } },
     { "<leader>pr",      function() Snacks.words.jump(-vim.v.count1) end, desc = "[P]rev [R]eference",      mode = { "n", "t" } },
+
+    -- Lazygit
+    { "<leader>git",     function() Snacks.lazygit.open() end,            desc = "Lazy[git]",               mode = { "n", "t" } },
+    { "<leader>gl",      function() Snacks.lazygit.log() end,             desc = "Lazy[g]it [l]og view",    mode = { "n", "t" } },
+    { "<leader>gf",      function() Snacks.lazygit.log_file() end,        desc = "Lazy[g]it [l]og view",    mode = { "n", "t" } },
   }
 }
 
