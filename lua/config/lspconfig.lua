@@ -71,7 +71,7 @@ local ls_to_setup = {
     }
   },
   jqls = {},
-  tsserver = {},
+  ts_ls = {},
   bashls = {},
   jsonls = {},
   yamlls = {},
