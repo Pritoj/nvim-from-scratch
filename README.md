@@ -13,6 +13,7 @@ https://github.com/nvim-telescope/telescope.nvim/
 
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
 - [FD](https://github.com/sharkdp/fd)
+- [Lazygit](https://github.com/jesseduffield/lazygit)
 
 ### Treesitter
 https://github.com/nvim-treesitter/nvim-treesitter

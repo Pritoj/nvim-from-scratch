@@ -16,29 +16,33 @@ local M = {
       configure = true
     },
     dashboard = { enabled = true }
-
   },
 
   keys = {
     -- Files
-    { "<leader>ff",      function() Snacks.picker.smart() end,            desc = "[F]ind [F]iles smartly" },
-    { "<leader><space>", function() Snacks.picker.files() end,            desc = "Find Files dumbly" },
-    { "<leader>fb",      function() Snacks.picker.buffers() end,          desc = "[F]ind [B]uffers" },
-    { "<leader>e",       function() Snacks.explorer() end,                desc = "File [E]xplorer" },
-    { "<leader>fw",      function() Snacks.picker.grep() end,             desc = "[F]ind [W]ord" },
+    { "<leader>ff",      function() Snacks.picker.smart() end,                                          desc = "[F]ind [F]iles smartly" },
+    { "<leader><space>", function() Snacks.picker.files() end,                                          desc = "Find Files dumbly" },
+    { "<leader>fb",      function() Snacks.picker.buffers() end,                                        desc = "[F]ind [B]uffers" },
+    { "<leader>e",       function() Snacks.explorer() end,                                              desc = "File [E]xplorer" },
+    { "<leader>fw",      function() Snacks.picker.grep() end,                                           desc = "[F]ind [W]ord" },
 
     -- History
-    { "<leader>ch",      function() Snacks.picker.command_history() end,  desc = "[C]ommand [H]istory" },
-    { "<leader>nh",      function() Snacks.picker.notifications() end,    desc = "[N]otification [H]istory" },
+    { "<leader>ch",      function() Snacks.picker.command_history() end,                                desc = "[C]ommand [H]istory" },
+    { "<leader>nh",      function() Snacks.picker.notifications() end,                                  desc = "[N]otification [H]istory" },
 
     -- References
-    { "<leader>nr",      function() Snacks.words.jump(vim.v.count1) end,  desc = "[N]ext [R]eference",      mode = { "n", "t" } },
-    { "<leader>pr",      function() Snacks.words.jump(-vim.v.count1) end, desc = "[P]rev [R]eference",      mode = { "n", "t" } },
+    { "<leader>nr",      function() Snacks.words.jump(vim.v.count1) end,                                desc = "[N]ext [R]eference",             mode = { "n", "t" } },
+    { "<leader>pr",      function() Snacks.words.jump(-vim.v.count1) end,                               desc = "[P]rev [R]eference",             mode = { "n", "t" } },
 
     -- Lazygit
-    { "<leader>git",     function() Snacks.lazygit.open() end,            desc = "Lazy[git]",               mode = { "n", "t" } },
-    { "<leader>gl",      function() Snacks.lazygit.log() end,             desc = "Lazy[g]it [l]og view",    mode = { "n", "t" } },
-    { "<leader>gf",      function() Snacks.lazygit.log_file() end,        desc = "Lazy[g]it [l]og view",    mode = { "n", "t" } },
+    { "<leader>git",     function() Snacks.lazygit.open() end,                                          desc = "Lazy[git]",                      mode = { "n", "t" } },
+    { "<leader>gl",      function() Snacks.lazygit.log() end,                                           desc = "Lazy[g]it [l]og view",           mode = { "n", "t" } },
+    { "<leader>gf",      function() Snacks.lazygit.log_file() end,                                      desc = "Lazy[g]it [l]og view",           mode = { "n", "t" } },
+
+    -- Terminal
+    { "<leader>tt",      function() Snacks.terminal.toggle(nil, { win = { position = "bottom" } }) end, desc = "[T]oggle [T]erminal",            mode = { "n", "t" } },
+    { "<leader>tft",     function() Snacks.terminal.toggle(nil, { win = { position = "float" } }) end,  desc = "[T]oggle [F]loating [T]erminal", mode = { "n", "t" } },
+
   }
 }
 
