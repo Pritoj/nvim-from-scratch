@@ -52,6 +52,7 @@ capabilities.textDocument.foldingRange = {
 -- To be added when I add code completion
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+local schemastore = require('schemastore')
 
 local ls_to_setup = {
   lua_ls = {
@@ -73,7 +74,12 @@ local ls_to_setup = {
   jqls = {},
   ts_ls = {},
   bashls = {},
-  jsonls = {},
+  jsonls = {
+    json = {
+      schemas = schemastore.json.schemas(),
+      validate = { enable = true },
+    },
+  },
   yamlls = {},
   cssls = {},
   smithy_ls = {},

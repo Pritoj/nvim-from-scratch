@@ -32,6 +32,8 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
+      -- Adding here until I find a better place honestly
+      "b0o/schemastore.nvim",
     },
     config = function()
       require "config.lspconfig"
