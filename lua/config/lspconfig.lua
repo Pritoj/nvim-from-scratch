@@ -1,4 +1,4 @@
-local lspconfig = require("lspconfig")
+local lspconfig = vim.lsp.config;
 -- Thanks to https://github.com/JavierLuna/dots/blob/main/nvim/.config/nvim/lua/plugins/lsp.lua
 local on_attach = function(_, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
@@ -72,7 +72,7 @@ local ls_to_setup = {
     }
   },
   jqls = {},
-  ts_ls = {},
+  tsgo = {},
   bashls = {},
   jsonls = {
     json = {
@@ -96,16 +96,15 @@ mason_lspconfig.setup({
   ensure_installed = vim.tbl_keys(ls_to_setup),
 })
 
-mason_lspconfig.setup_handlers {
-  function(server_name)
-    lspconfig[server_name].setup {
+for server_name, opts in pairs(ls_to_setup) do
+  lspconfig(server_name, {
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = ls_to_setup[server_name],
-      filetypes = (ls_to_setup[server_name] or {}).filetypes,
-    }
-  end,
-}
+      settings = opts,
+      filetypes = opts.filetypes,
+  })
+  
+end
 
 local mason_tool_installer = require "mason-tool-installer";
 
