@@ -84,6 +84,7 @@ local ls_to_setup = {
   cssls = {},
   smithy_ls = {},
   html = {},
+  rust_analyzer = {}
 }
 
 
@@ -98,12 +99,11 @@ mason_lspconfig.setup({
 
 for server_name, opts in pairs(ls_to_setup) do
   lspconfig(server_name, {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = opts,
-      filetypes = opts.filetypes,
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = opts,
+    filetypes = opts.filetypes,
   })
-  
 end
 
 local mason_tool_installer = require "mason-tool-installer";
