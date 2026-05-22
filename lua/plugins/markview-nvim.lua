@@ -3,6 +3,9 @@ return {
     "OXY2DEV/markview.nvim",
     lazy = false,
 
+    dependencies = { 
     -- Completion for `blink.cmp`
-    -- dependencies = { "saghen/blink.cmp" },
+    -- "saghen/blink.cmp" ,
+    "nvim-treesitter"
+  },
 };
